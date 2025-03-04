@@ -27,6 +27,11 @@
 
           modules = [ ./hosts/openbox/home.nix ];
         };
-    };
-  };
+      };
+
+      packages.${system} = {
+        tux = homeConfigurations.tux.activationPackage;
+        "tux-OpenBox" = homeConfigurations."tux-OpenBox".activationPackage;
+      };
+   };
 }
