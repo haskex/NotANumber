@@ -16,13 +16,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       homeConfigurations = {
-        "tux#Plasma" = home-manager.lib.homeManagerConfiguration {
+        "tux-Plasma" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
           modules = [ ./hosts/plasma/home.nix ];
         };
 
-        "tux#OpenBox" = home-manager.lib.homeManagerConfiguration {
+        "tux-OpenBox" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
           modules = [ ./hosts/openbox/home.nix ];
@@ -31,7 +31,7 @@
 
       packages.${system} = {
         tux = homeConfigurations.tux.activationPackage;
-        "tux-OpenBox" = homeConfigurations."tux-OpenBox".activationPackage;
+        "tux-Plasma" = homeConfigurations."tux-Plasma".activationPackage;
       };
    };
 }
